@@ -30,12 +30,12 @@ public class DemoApplication implements CommandLineRunner {
 	private TransactionalSameClassCall transactionalSameClassCall;
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		Subject subject = new Subject();
 		subject.setName("TEST");
 
 		Subject subject1 = new Subject();
-		subject.setName("TEST1");
+		subject1.setName("TEST1");
 
 		List<Subject> subjects = Arrays.asList(subject, subject1);
 
