@@ -20,6 +20,7 @@ public class TransactionIsolationApplication implements CommandLineRunner {
 //            firstService.createTransactionalToNonTransactional(0);
 //            firstService.createTransactionalToTransactionalRequired(0);
 //            firstService.createTransactionalToTransactionalRequiresNew(0);
+//            firstService.createTransactionalToNoSupportTransactional(0);
 
             // throw at second level
 //            firstService.createNonTransactionalToNonTransactional(1);
@@ -27,6 +28,8 @@ public class TransactionIsolationApplication implements CommandLineRunner {
 //            firstService.createTransactionalToNonTransactional(1);
 //            firstService.createTransactionalToTransactionalRequired(1); // silently rolled back sample
 //            firstService.createTransactionalToTransactionalRequiresNew(1);
+//            firstService.createTransactionalToNoSupportTransactional(1);
+
         } catch (RuntimeException ex) {
             System.out.println(ex.getMessage());
         }

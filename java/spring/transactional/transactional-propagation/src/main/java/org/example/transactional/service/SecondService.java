@@ -28,6 +28,12 @@ public class SecondService {
         throwIfOdd(number);
     }
 
+    @Transactional(value = Transactional.TxType.NOT_SUPPORTED)
+    public void createTransactionalNotSupported(int number) {
+        createSecondType("transactionalNotSupported");
+        throwIfOdd(number);
+    }
+
     private void createSecondType(String name) {
         SecondType secondType = new SecondType();
         secondType.setName(name);

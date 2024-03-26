@@ -78,6 +78,19 @@ public class FirstService {
         throwIfEven(number);
     }
 
+    @Transactional
+    public void createTransactionalToNoSupportTransactional(int number) {
+        createFirstType("transactional-transactional-requires-new");
+
+        try {
+            service.createTransactionalNotSupported(number);
+        } catch (RuntimeException ex) {
+            System.out.println(INTERCEPTED_ERROR_ON_SECOND_LEVEL);
+        }
+
+        throwIfEven(number);
+    }
+
     private void createFirstType(String name) {
         FirstType firstType = new FirstType();
         firstType.setName(name);
